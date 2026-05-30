@@ -8,7 +8,7 @@ public class JogadorTest02 {
         Jogador jogador1 = new Jogador("Kobe Bryant");
         Time time = new Time("Lakers");
 
-        jogador1.setTime(time);
+        jogador1.setTime(time); // Cadastra o jogador em um time
         jogador1.imprime();
     }
 }

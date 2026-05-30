@@ -11,7 +11,7 @@ public class JogadorTest03 {
         Time time = new Time("Brasil");
         Jogador[] jogadores = {jogador, jogador2, jogador3};
 
-        jogador.setTime(time);
+        jogador.setTime(time); // Cadastra o jogador em um time
         jogador2.setTime(time);
         jogador3.setTime(time);
 

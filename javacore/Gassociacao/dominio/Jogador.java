@@ -18,7 +18,7 @@ public class Jogador {
 
     public void imprime() {
         System.out.println("Jogador: " + this.nome);
-        if (time != null) {
+        if (time != null) { // Valida se o campo com o nome do time está vazio
             System.out.println(time.getNome());
         }
     }
