@@ -7,12 +7,12 @@ import academy.devdojo.javacore.Hhreanca.domain.Pessoa;
 public class HerancaTest01 {
     public static void main(String[] args) {
         Endereco endereco = new Endereco();
-        endereco.setCep("4765000");
-        endereco.setRua("Ari Barroso");
+        endereco.setCep("99901");
+        endereco.setRua("Soul Society");
 
         Pessoa pessoa = new Pessoa();
-        pessoa.setNome("Brayan");
-        pessoa.setCpf("12232193");
+        pessoa.setNome("Sosuke Aizen");
+        pessoa.setCpf("Hueco Mundo");
         pessoa.setEndereco(endereco);
 
         pessoa.imprime();
@@ -20,8 +20,8 @@ public class HerancaTest01 {
         System.out.println("-----------------------");
 
         Funcionario funcionario = new Funcionario();
-        funcionario.setNome("Júlia");
-        funcionario.setCpf("098765434");
+        funcionario.setNome("Zaraki Kenpachi");
+        funcionario.setCpf("Seireitei");
         funcionario.setSalario(5000.0);
         funcionario.setEndereco(endereco);
         funcionario.imprime();
