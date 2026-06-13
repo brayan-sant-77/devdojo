@@ -24,7 +24,8 @@ public enum TipoCliente {
         3 - Aí ele fez: tipoCliente.getNomeRelatorio(). O que tem guardado nesse atributo dentro da PESSOA_FISICA? Exatamente a String "Pessoa Fisica".
         4 - Aí ele comparou: "Pessoa Fisica".equals("Pessoa Fisica").
         5 - BINGO! Deu true. O método então deu um return tipoCliente;.
-    } */
+         */
+    }
 
     public int getVALOR() {
         return VALOR;
