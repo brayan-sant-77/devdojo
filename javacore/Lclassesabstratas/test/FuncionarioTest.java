@@ -10,5 +10,9 @@ public class FuncionarioTest {
 
         System.out.println(gerente);
         System.out.println(desenvolvedor);
+
+        // Metodo implementado sendo herdada da classe Funcionario
+        gerente.imprime();
+        desenvolvedor.imprime();
     }
 }
