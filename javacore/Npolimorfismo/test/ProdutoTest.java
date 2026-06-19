@@ -1,16 +1,22 @@
 package academy.devdojo.javacore.Npolimorfismo.test;
 
 import academy.devdojo.javacore.Npolimorfismo.domain.Celular;
+import academy.devdojo.javacore.Npolimorfismo.domain.Produto;
 import academy.devdojo.javacore.Npolimorfismo.domain.Videogame;
-import academy.devdojo.javacore.Npolimorfismo.service.CalculadoraImposto;
+
 
 public class ProdutoTest {
     public static void main(String[] args) {
-        Celular celular = new Celular("Iphone XR", 1100);
-        Videogame videogame = new Videogame("PS5", 4000);
+        Produto produto = new Celular("Samsung S25", 5000);
+        System.out.println(produto.getNome());
+        System.out.println(produto.getValor());
+        System.out.println(produto.calcularImposto());
 
-        CalculadoraImposto.calculadoraImpostoCelular(celular);
-        System.out.println("-----------------------------");
-        CalculadoraImposto.calculadoraImpostoVideoGame(videogame);
+        System.out.println("--------------");
+
+        Produto produto2 = new Videogame("PS5", 4500);
+        System.out.println(produto2.getNome());
+        System.out.println(produto2.getValor());
+        System.out.println(produto2.calcularImposto());
     }
 }
