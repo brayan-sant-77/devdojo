@@ -9,7 +9,6 @@ public class ExceptionTest01 {
     }
 
     // Aqui eu criei uma pasta que não aceita a criação de arquivos, só para testar o catch
-    // no atual momento 14:27 do dia 23/06/26 está funcionando normal com a pasta local de teste
     public static void CriarNovoArquivo() {
         // Aqui definimos o caminho da pasta e do arquivo
         String caminhoPasta = "arquivo";
