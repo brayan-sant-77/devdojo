@@ -14,6 +14,6 @@ public class StringTest01 {
         String nome3 = new String("Brayan"); // quando a gente cria um objeto, a string vai fazer referência ao objeto, não a pool
 
         System.out.println(nome2 == nome3);
-        System.out.println(nome2 == nome3.intern());
+        System.out.println(nome2 == nome3.intern()); // verifica se duas strings possuem o mesmo conteúdo, pois elas apontarão para o mesmo objeto em memória
     }
 }
