@@ -15,7 +15,7 @@ public class DateFormatTest01 {
         dateFormats[4] = DateFormat.getDateInstance(DateFormat.MEDIUM); // retorna a data num formato médio (com o mês abreviado)
         dateFormats[5] = DateFormat.getDateInstance(DateFormat.LONG); // retorna a data com o mês absoluto e o ano com 4 dígitos
         dateFormats[6] = DateFormat.getDateInstance(DateFormat.FULL); // retorna a data de forma completa, trazendo também o dia da semana
-         
+
         for (DateFormat dateFormat : dateFormats) {
             System.out.println(dateFormat.format(calendar.getTime()));
         }
