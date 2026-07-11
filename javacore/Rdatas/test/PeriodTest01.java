@@ -1,8 +1,8 @@
 package academy.devdojo.javacore.Rdatas.test;
 
 import java.time.LocalDate;
-import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class PeriodTest01 {
     public static void main(String[] args) {
@@ -23,5 +23,7 @@ public class PeriodTest01 {
 
         System.out.println(p3.getMonths() + " = tentativa de pegar os meses pelos dias"); // vai retornar 0. o Period não retorna a quantidade de meses pelos dias. Para isso usamos o ChronoUnit, que é mais preciso.
 
+        // Pegando a quantidade de meses baseado em uma determinada quantidade de dias
+        System.out.println(now.until(now.plusDays(p3.getDays()), ChronoUnit.MONTHS) + " = quantidade de meses do p3");
     }
 }
