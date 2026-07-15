@@ -21,7 +21,7 @@ public class PatternMatcherTest03 {
         String texto = "12 0x 0x 0xFFABC 0x109 0x1";
         Pattern pattern = Pattern.compile(regex); // vai compilar essa expressão regular
         Matcher matcher = pattern.matcher(texto); // procura no texto
-        System.out.println("texo:   " + texto);
+        System.out.println("texto:   " + texto);
         System.out.println("Indice: 0123456789");
         System.out.println("regex: " + regex);
         System.out.println("Posições encontradas: ");

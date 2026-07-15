@@ -1,10 +1,11 @@
 package academy.devdojo.javacore.Uregex.test;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 // os Meta caracteres funcionam como um "atalho" para você conseguir pegar alguns caracteres
-public class PatternMatcherTest04 {
+public class PatternMatcherTest05 {
     public static void main(String[] args) {
         // Meta caracteres mais usados:
         // \d = Todos os dígitos
@@ -23,9 +24,13 @@ public class PatternMatcherTest04 {
         // () agrupamento
         // | significa OU (exemplo: o(v|c)o. Ele vai dá um match nas ocorrências: ovo | oco
         // $ representa o fim da linha
+        // . = retorna tudo que tiver entre um ponto ao outro (exemplo 1.3 = 123, 133, 1@3, 1A3)
 
-        String regex = "0[xX]([0-9a-fA-F])+(\\s|$)"; // primeiros agrupamos os caracteres
-        String texto = "12 0x 0x 0xFFABC 0x10G 0x1";
+        String regex = "([a-zA-Z0-9._-])+@([a-zA-Z])+(\\.([a-zA-Z])+)+"; // aqui procuramos um padrão de um texto, e não validando
+        String texto = "ichigo@hotmail.com, 454shinra@gmail.com, #@!denji@mail.br, teste@gmail.com.br, hibana@mail";
+        System.out.println("Email valido");
+        System.out.println("#@!denji@mail.br".matches(regex)); // verifica se é válido ao padrão
+        System.out.println((texto.split(",")[1].trim()));
         Pattern pattern = Pattern.compile(regex); // vai compilar essa expressão regular
         Matcher matcher = pattern.matcher(texto); // procura no texto
         System.out.println("texto:   " + texto);

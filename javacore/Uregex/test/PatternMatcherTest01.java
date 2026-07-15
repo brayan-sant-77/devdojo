@@ -12,7 +12,7 @@ public class PatternMatcherTest01 {
         String texto2 = "abababa";
         Pattern pattern = Pattern.compile(regex); // vai compilar essa expressão regular
         Matcher matcher = pattern.matcher(texto2); // procura no texto
-        System.out.println("texo:   " + texto2);
+        System.out.println("texto:   " + texto2);
         System.out.println("Indice: 0123456789");
         System.out.println("regex " + regex);
         System.out.println("Posições encontradas: ");
