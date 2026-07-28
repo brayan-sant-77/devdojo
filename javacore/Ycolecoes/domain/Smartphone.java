@@ -15,7 +15,6 @@ public class Smartphone {
     // Transitividade: para x,y,z diferentes de null, se x.equals(y) == true, e x.equals(z) == true logo, y.equals(z) == true
     // Consistente: x.equals(x) sempre retorna true se x for diferente de null
     // para x diferente de null, x.equals(null) tem que retornar false.
-    
     public boolean equals(Object obj) { // verifica se dois objetos Smartphone são considerados iguais
         if (obj == null) return false; // retorna false caso o objeto recebido seja nulo
         if (this == obj) return true; // se as duas referências apontam para o mesmo objeto, eles são iguais
@@ -32,6 +31,14 @@ public class Smartphone {
     @Override
     public int hashCode() {
         return serialNumber == null ? 0: this.serialNumber.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", brand='" + brand + '\'' +
+                '}';
     }
 
     public String getSerialNumber() {
