@@ -2,7 +2,7 @@ package academy.devdojo.javacore.Ycolecoes.domain;
 
 import java.util.Objects;
 
-public class Manga {
+public class Manga implements Comparable<Manga>{ // precisamos implementar a classe Comparable para usar o compareTo
     private Long id;
     private String name;
     private double price;
@@ -50,5 +50,27 @@ public class Manga {
 
     public double getPrice() {
         return price;
+    }
+
+    // comparamos dois objetos e determinamos a sua ordem relativa (menor, igual, ou maior)
+    // sendo fundamental para operações de ordenação (sorting) de coleções e arrays
+    @Override
+    public int compareTo(Manga otherManga) {
+        // Esse método retorna um inteiro. Nós temos acesso a dois objetos, o objeto this, e o objeto passado como argumento
+        // temos que retornar um NEGATIVO se caso o this < otherManga
+        // se this == otherManga, temos que retornar 0
+        // retornamos um POSITIVO se o this > otherManga
+
+//        if (this.id < otherManga.getId()) {
+//            return -1;
+//        } else if (this.id.equals(otherManga.getId())) {
+//            return 0;
+//        } else {
+//            return 1;
+//        }
+
+        return this.name.compareTo(otherManga.getName()); // organizando por ordem alfabética
+       // return Double.compare(price, otherManga.getPrice());  organizando por preço, usamos um Wrapper para trabalhar com a comparação utilizando tipos primitivos
+       // return this.id.compareTo(otherManga.getId());  podemos usar essa forma mais simplificada para ordenar a lista, mas ela não funciona com tipos primitivos
     }
 }

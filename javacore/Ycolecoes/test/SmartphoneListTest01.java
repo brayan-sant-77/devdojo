@@ -24,7 +24,7 @@ public class SmartphoneListTest01 {
         }
 
         Smartphone s4 = new Smartphone("6YHE", "Samsung");
-        
+
         System.out.println(smartphones.contains(s4)); // retorna true ou falso para saber se esse objeto existe dentro da lista
         int indexSmartphone4 = smartphones.indexOf(s4); // retorna o índice do objeto que a gente está passando, e retorna -1 caso ele não exista
         System.out.println(smartphones.get(indexSmartphone4)); // traz o objeto encontrado no índice encontrado pelo .get()
