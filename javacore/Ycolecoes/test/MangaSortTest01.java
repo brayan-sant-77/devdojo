@@ -4,7 +4,17 @@ import academy.devdojo.javacore.Ycolecoes.domain.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+class MangaByIdComparator implements Comparator<Manga> {
+    // o Comparator serve para definir a lógica de ordenação de objetos em coleções sem modificar a classe original desses objetos
+    // Permite criar ordenações personalizadas e múltiplas formas de ordenar a mesma classe, sendo ideal para classes de terceiros ou quando a ordem natural não é suficiente
+    @Override
+    public int compare(Manga manga1, Manga manga2) {
+        return manga1.getId().compareTo(manga2.getId()); // criamos uma ordenação por ID
+    }
+}
 
 public class MangaSortTest01 {
     public static void main(String[] args) {
@@ -21,8 +31,16 @@ public class MangaSortTest01 {
             System.out.println(manga);
         }
 
+        System.out.println();
         System.out.println("=== ORDEM ALFABÉTICA ===");
         Collections.sort(mangas);
+        for (Manga manga : mangas) {
+            System.out.println(manga);
+        }
+
+        System.out.println();
+        System.out.println("=== ORDEM POR ID ===");
+        mangas.sort(new MangaByIdComparator()); //
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
