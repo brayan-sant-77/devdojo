@@ -6,6 +6,7 @@ public class Manga implements Comparable<Manga>{ // precisamos implementar a cla
     private Long id;
     private String name;
     private double price;
+    private int quantity;
 
     public Manga(Long id, String name, double price) {
         Objects.requireNonNull(id, "Id não pode ser null"); // verificamos se existe algum campo nulo, caso exista, é lançada uma exceção
@@ -15,12 +16,18 @@ public class Manga implements Comparable<Manga>{ // precisamos implementar a cla
         this.price = price;
     }
 
+    public Manga(Long id, String name, double price, int quantity) {
+        this(id, name, price);
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Manga{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", quantity=" + quantity +
                 '}';
     }
 
@@ -50,6 +57,10 @@ public class Manga implements Comparable<Manga>{ // precisamos implementar a cla
 
     public double getPrice() {
         return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     // comparamos dois objetos e determinamos a sua ordem relativa (menor, igual, ou maior)
