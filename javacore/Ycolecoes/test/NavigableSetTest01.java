@@ -78,7 +78,7 @@ public class NavigableSetTest01 {
         System.out.println("-------------");
         System.out.println(mangas.size());
         System.out.println(mangas.pollFirst()); // vai retornar e remover o primeiro elemento da lista
-        System.out.println(mangas.pollFirst()); // vai retornar e remover o último elemento da lista
+        System.out.println(mangas.pollLast()); // vai retornar e remover o último elemento da lista
         System.out.println(mangas.size());
 
         System.out.println("-------------");
