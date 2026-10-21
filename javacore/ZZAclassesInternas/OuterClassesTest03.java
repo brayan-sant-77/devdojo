@@ -11,6 +11,6 @@ public class OuterClassesTest03 {
     }
     public static void main(String[] args) {
         Nested nested = new Nested();
-        nested.print(); // acessamoso método da classe estática
+        nested.print(); // acessamos o método da classe estática
     }
 }
