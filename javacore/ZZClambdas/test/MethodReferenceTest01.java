@@ -6,6 +6,7 @@ import academy.devdojo.javacore.ZZClambdas.service.AnimeComparators;
 import java.util.ArrayList;
 import java.util.List;
 
+// Referência a método estático
 public class MethodReferenceTest01 {
     public static void main(String[] args) {
         List<Anime> animeList = new ArrayList<>(List.of(new Anime("Tokyo Ghoul", 150),
