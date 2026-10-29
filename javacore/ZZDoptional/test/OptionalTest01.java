@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 // o intuito do Optional é evitar o NullPointerException
+// o Optional não é recomendado usar na passagem de parâmetro
+// também não é recomendado usar como uma variável de classe
 public class OptionalTest01 {
     public static void main(String[] args) {
         // o tipo que vamos trabalhar, é o tipo que estamos utilizando, nesse caso é uma String
