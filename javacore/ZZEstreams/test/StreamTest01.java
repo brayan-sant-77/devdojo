@@ -32,5 +32,7 @@ public class StreamTest01 {
                 break;
             }
         }
+
+        System.out.println(titles);
     }
 }
