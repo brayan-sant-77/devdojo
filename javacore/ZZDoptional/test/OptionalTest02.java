@@ -18,7 +18,7 @@ public class OptionalTest02 {
 
         // se caso for passado um Id que não exista, o programa lança uma exceção
         Manga mangaById = MangaRepository.findById(2)
-                .orElseThrow(IllegalArgumentException::new); 
+                .orElseThrow(IllegalArgumentException::new);
 
         System.out.println(mangaById);
 
