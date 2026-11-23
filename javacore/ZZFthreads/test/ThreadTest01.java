@@ -44,6 +44,15 @@ class ThreadExampleRunnable implements Runnable {
             if (i % 100 == 0) {
                 System.out.println();
             }
+            // podemos usar .sleep para "pausar" uma thread durante determinado tempo
+            // é uma das únicas coisas que temos garantia em Threads
+            // quando a thread dorme ela vai do estado Running para o estado Waiting, depois volta para o estado Runnable e pode ser executada novamente
+            try {
+                // mas não existe garantia de que todas as threads vão continuar a executar sequencialmente até esse trecho do código
+                Thread.sleep(2000); // todas as threads vão parar por 2 milissegundos
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
@@ -55,10 +64,17 @@ class ThreadExampleRunnable implements Runnable {
 //            ThreadExample t3 = new ThreadExample('C');
 //            ThreadExample t4 = new ThreadExample('D');
 
-            Thread t1 = new Thread(new ThreadExampleRunnable('A'));
-            Thread t2 = new Thread(new ThreadExampleRunnable('B'));
-            Thread t3 = new Thread(new ThreadExampleRunnable('C'));
-            Thread t4 = new Thread(new ThreadExampleRunnable('D'));
+            // todas as threads possuem uma determinada prioridade
+            Thread t1 = new Thread(new ThreadExampleRunnable('A'), "T1A"); // podemos determinar nomes para as threads
+            Thread t2 = new Thread(new ThreadExampleRunnable('B'), "T2B");
+            Thread t3 = new Thread(new ThreadExampleRunnable('C'), "T3C");
+            Thread t4 = new Thread(new ThreadExampleRunnable('D'), "T4C");
+
+            // podemos setar a prioridade das threads, esses valores vão de 1 a 10, sendo 1 a menor prioridade e 10 a maior,
+            // mas, nada nos garante que isso irá funcionar
+            // a forma recomendada de setar uma prioridade é utilizando o MAX, MIN, ou NORMAL prioridade
+            // baseado nisso, temos que ter em mente que não devemos desenvolver um código baseado em prioridade
+            t4.setPriority(Thread.MAX_PRIORITY);
 
             // a sequência que as threads são iniciadas é de escolha da JVM, não possuímos esse controle
             // a ordem pode ser diferente, ão existe garantia que a ordem de execução sempre será a mesma
