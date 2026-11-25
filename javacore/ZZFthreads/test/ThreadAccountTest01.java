@@ -2,7 +2,7 @@ package academy.devdojo.javacore.ZZFthreads.test;
 
 import academy.devdojo.javacore.ZZFthreads.domain.Account;
 
-public class ThreadAccountTest01 implements Runnable{
+public class ThreadAccountTest01 implements Runnable {
     private final Account account = new Account(); // criamos um objeto da conta
 
     public static void main(String[] args) {
@@ -28,14 +28,21 @@ public class ThreadAccountTest01 implements Runnable{
     }
 
     // realizamos o método de sacar com regra de negócio
+    // podemos realizar a sincronização em um método ou como um bloco de código
     private void withdrawMoney(int amount) {
-        if (account.getBalance() >= amount) {
-            // pegamos o nome da thread que está a operar e imprimimos a mensagem
-            System.out.println(getThreadName() + " está indo sacar dinheiro");
-            account.withdrawMoney(amount);
-            System.out.println(getThreadName() + " completou o saque, valor atual da conta: " + account.getBalance());
-        } else {
-            System.out.println("Sem dinheiro para " + getThreadName() + " efetuar o saque " + account.getBalance());
+        // para utilizar uma sincronização em bloco de código, a variável usada precisa ser declarada como final para evitar complicações
+        // agora uma thread vai entrar no método de sacar, e não vai permitir que outra entre até ela realizar o método
+        System.out.println(getThreadName() + " ### fora do synchronized");
+        synchronized (account) {
+            System.out.println(getThreadName() + " *** dentro do synchronized");
+            if (account.getBalance() >= amount) {
+                // pegamos o nome da thread que está a operar e imprimimos a mensagem
+                System.out.println(getThreadName() + " está indo sacar dinheiro");
+                account.withdrawMoney(amount);
+                System.out.println(getThreadName() + " completou o saque, valor atual da conta: " + account.getBalance());
+            } else {
+                System.out.println("Sem dinheiro para " + getThreadName() + " efetuar o saque " + account.getBalance());
+            }
         }
     }
 
